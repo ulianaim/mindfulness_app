@@ -9,7 +9,7 @@ const quoteSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
-  thoughtAuthor: {
+  quoteAuthor: {
     type: String,
     required: true,
     trim: true,
