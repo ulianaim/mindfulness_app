@@ -1,46 +1,63 @@
-const { Affirmation, Quote, User } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { User, Quote } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    affirmations: async () => {
-      return Affirmation.find();
+    users: async () => {
+      return User.find().populate('quotes');
     },
-
-    affirmation: async (parent, { affirmationId }) => {
-      return Affirmation.findOne({ _id: affirmationId });
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate('quotes');
     },
-    quotes: async () => {
-        return Quote.find();
-      },
-  
-      quote: async (parent, { quoteId }) => {
-        return Quote.findOne({ _id: quoteId });
-      },
-      user: async (parent, { userId }) => {
-        return User.findOne({ _id: userId });
-      },
+    quotes: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Quote.find(params).sort({ createdAt: -1 });
+    },
+    quote: async (parent, { quoteId }) => {
+      return Quote.findOne({ _id: quoteId });
+    },
   },
 
   Mutation: {
-    addAffirmation: async (parent, { affirmationText, affirmationAuthor }) => {
-      return Affirmation.create({ affirmationText, affirmationAuthor });
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+      return { token, user };
     },
-    addQuote: async (parent, { quoteText, quoteAuthor }) => {
-        return Quote.create({ quoteText, quotenAuthor });
-      },
-      addUser: async (parent, { firstName, lastName, email, userName, password }) => {
-        return User.create({ firstName, lastName, email, userName, password });
-      },
- 
-    removeAffirmation: async (parent, { affirmationId }) => {
-      return Affirmation.findOneAndDelete({ _id: affirmationId });
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No user found with this email address');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+    addQuote: async (parent, { quoteText, quoteAuthor, createdAt }) => {
+      const quote = await Quote.create({ quoteText, quoteAuthor, createdAt });
+
+      // await User.findOneAndUpdate(
+      //   { username: quoteAuthor },
+      //   { $addToSet: { quotes: quote._id } }
+      // );
+
+      return quote;
     },
     removeQuote: async (parent, { quoteId }) => {
-        return Quote.findOneAndDelete({ _id: quoteId });
-      },
-      removeUser: async (parent, { userId }) => {
-        return User.findOneAndDelete({ _id: userId });
-      },
+      return Quote.findOneAndDelete({ _id: quoteId });
+    },
+    updateQuote: async (parent, { quoteId, quoteText }) => {
+      return Quote.findOneAndUpdate({ _id: quoteId, quoteText });
+    },
   },
 };
 

@@ -1,12 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Affirmation {
-    _id: ID
-    affirmationText: String
-    affirmationAuthor: String
-    createdAt: String
-    }
+
     type Quote {
         _id: ID
         quoteText: String
@@ -14,28 +9,29 @@ const typeDefs = gql`
         createdAt: String
         }
 
-    type User {
+        type User {
             _id: ID
-            userText: String
-            userAuthor: String
-            createdAt: String
-            }
+            username: String
+            email: String
+            password: String            
+          }
+          type Auth {
+            token: ID
+            user: User
+          }
 
     type Query {
-    affirmations: [Affirmation]!
-    affirmation(affirmationId: ID!): Affirmation
     quotes: [Quote]!
     quote(quoteId: ID!): Quote   
     user(userId: ID!): User
   }
 
-  type Mutation {
-    addAffirmation(affirmationText: String!, affirmationAuthor: String!): Affirmation
+  type Mutation {   
     addQuote(quoteId: ID!, quoteText: String!): Quote
-    removeAffirmation(affirmationId: ID!): Affirmation
     removeQuote(quoteId: ID!): Quote
-    addUser(firstName: String!, lastName: String!, email: String!, userName: String, password: String!): User
-    removeQuote(quoteId: ID!): Quote
+    updateQuote(quoteId: ID!, quoteText: String!): Quote
+    addUser(username: String, email: String!, password: String!): User
+    removeUser(userId: ID!): User
   }
 `;
 
