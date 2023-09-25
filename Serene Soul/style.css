@@ -103,3 +103,27 @@ button:focus-visible {
     background-color: var(--chambray);
   }
 }
+
+/* Responsive layout adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #app {
+    padding: 1rem;
+  }
+
+  .logo {
+    padding: 1em;
+    height: 4em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .card {
+    padding: 1em;
+  }
+}
