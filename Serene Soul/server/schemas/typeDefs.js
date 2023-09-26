@@ -22,6 +22,7 @@ const typeDefs = gql`
         }
 
     type Query {
+        users: [User]!
         quotes: [Quote]!
         quote(quoteId: ID!): Quote   
         user(userId: ID!): User
