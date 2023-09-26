@@ -23,7 +23,7 @@ export const CREATE_USER = gql`
     }`
 
 export const ADD_QUOTE = gql`
-  mutation addQuote($body: addQuoteInput!) {
+  mutation addQuote($body: String!) {
     addQuote(body: $body) {
         _id
         username
@@ -32,27 +32,25 @@ export const ADD_QUOTE = gql`
   }`
 
 export const UPDATE_QUOTE = gql`
-mutation updateQuote($body: updateQuoteInput!)
-    updateQuote(body: $body) {
+mutation updateQuote($quoteId: String!, $body: String!)
+    updateQuote(quoteId: $quoteId, body: $body) {
         _id
         username
         email
         password
         addedQuotes {
-            message
-            author
+            quoteText
+            quoteAuthor
+            createdAt
         }
     }`
   
 
 export const DELETE_QUOTE = gql`
   mutation deleteQuote($quoteId: String!) {
+    deleteQuote(quoteId: $quoteId)
     _id
     username
     email
     password
-    addedQuotes {
-        message
-        author
-    }
   }`

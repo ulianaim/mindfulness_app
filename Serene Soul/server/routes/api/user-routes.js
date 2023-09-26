@@ -15,7 +15,7 @@ router.route('/').post(createUser).put(authMiddleware, addQuote);
 
 router.route('/login').post(login);
 
-router.route('/me').get(authMiddleware, getSingleUser);
+router.route('/user').get(authMiddleware, getSingleUser);
 
 router.route('/quotes/:quoteId').delete(authMiddleware, removeQuote);
 

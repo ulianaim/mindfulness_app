@@ -20,8 +20,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { args }) => {
+      const user = await User.create({ args });
       const token = signToken(user);
       return { token, user };
     },
@@ -45,10 +45,10 @@ const resolvers = {
     addQuote: async (parent, { quoteText, quoteAuthor, createdAt }) => {
       const quote = await Quote.create({ quoteText, quoteAuthor, createdAt });
 
-      // await User.findOneAndUpdate(
-      //   { username: quoteAuthor },
-      //   { $addToSet: { quotes: quote._id } }
-      // );
+      await User.findOneAndUpdate(
+        { username: quoteAuthor },
+        { $addToSet: { quotes: quote._id } }
+      );
 
       return quote;
     },
