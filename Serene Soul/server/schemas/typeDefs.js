@@ -27,6 +27,7 @@ const typeDefs = gql`
   }
 
   type Mutation {    
+    login(email: String!, password: String!): Auth
     addQuote(quoteId: ID!, quoteText: String!): Quote
     removeQuote(quoteId: ID!): Quote
     updateQuote(quoteId: ID!, quoteText: String!): Quote
