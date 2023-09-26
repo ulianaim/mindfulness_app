@@ -20,9 +20,11 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { args }) => {
-      const user = await User.create({ args });
-      const token = signToken(user);
+    addUser: async (parent, { username, email, password }) => {
+      if (!username || !email || !password) {
+        throw new Error("username, email, and password are required.")};
+      const user = await User.create({ username, email, password });
+      const token = signToken(user); 
       return { token, user };
     },
     login: async (parent, { email, password }) => {
@@ -46,7 +48,7 @@ const resolvers = {
       const quote = await Quote.create({ quoteText, quoteAuthor, createdAt });
 
       await User.findOneAndUpdate(
-        { username: quoteAuthor },
+        { username: quoteText, quoteAuthor },
         { $addToSet: { quotes: quote._id } }
       );
 

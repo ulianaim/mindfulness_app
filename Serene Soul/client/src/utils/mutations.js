@@ -11,9 +11,9 @@ mutation login($email: String!, $password: String!) {
     }
 }`
 
-export const CREATE_USER = gql`
-  mutation createUser($username: String!, $email: String!, $password: String!) {
-    createUser(username: $username, email: $email, password: $password) {
+export const ADD_USER = gql`
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
       token
       user{
         _id
@@ -23,8 +23,8 @@ export const CREATE_USER = gql`
     }`
 
 export const ADD_QUOTE = gql`
-  mutation addQuote($body: String!) {
-    addQuote(body: $body) {
+  mutation addQuote($quoteText: String!, $quoteAuthor: String!) {
+    addQuote(quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
         _id
         username
         email
@@ -32,8 +32,8 @@ export const ADD_QUOTE = gql`
   }`
 
 export const UPDATE_QUOTE = gql`
-mutation updateQuote($quoteId: String!, $body: String!)
-    updateQuote(quoteId: $quoteId, body: $body) {
+mutation updateQuote($quoteId: String!, $quoteText: String!, $quoteAuthor: String!)
+    updateQuote(quoteId: $quoteId, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
         _id
         username
         email
@@ -46,9 +46,9 @@ mutation updateQuote($quoteId: String!, $body: String!)
     }`
   
 
-export const DELETE_QUOTE = gql`
-  mutation deleteQuote($quoteId: String!) {
-    deleteQuote(quoteId: $quoteId)
+export const REMOVE_QUOTE = gql`
+  mutation removeQuote($quoteId: String!) {
+    removeQuote(quoteId: $quoteId)
     _id
     username
     email

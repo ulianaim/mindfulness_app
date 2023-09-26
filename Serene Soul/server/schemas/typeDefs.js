@@ -29,9 +29,9 @@ const typeDefs = gql`
 
   type Mutation {    
         login(email: String!, password: String!): Auth
-        addQuote(body: String!): Quote
+        addQuote(quoteText: String!, quoteAuthor: String!): Quote
         removeQuote(quoteId: String!): Quote
-        updateQuote(quoteId: String!, body: String!): Quote
+        updateQuote(quoteId: String!, quoteText: String!, quoteAuthor: String!): Quote
         addUser(username: String!, email: String!, password: String!): User
         removeUser(userId: String!): User
         }`;
