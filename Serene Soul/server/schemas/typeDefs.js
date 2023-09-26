@@ -26,7 +26,7 @@ const typeDefs = gql`
     user(userId: ID!): User
   }
 
-  type Mutation {   
+  type Mutation {    
     addQuote(quoteId: ID!, quoteText: String!): Quote
     removeQuote(quoteId: ID!): Quote
     updateQuote(quoteId: ID!, quoteText: String!): Quote
