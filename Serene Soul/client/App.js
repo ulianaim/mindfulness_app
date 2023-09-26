@@ -60,7 +60,7 @@ const httpLink = createHttpLink({
                   element={<Profile />}
                 />
                 <Route 
-                  path="/profiles/:username" 
+                  path="/profile/:username" 
                   element={<Profile />}
                 />
                 <Route 
