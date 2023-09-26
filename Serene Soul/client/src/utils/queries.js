@@ -5,6 +5,8 @@ query getUsers {
     users {
         _id
         username
+        email
+        password
     }
 }`
 
