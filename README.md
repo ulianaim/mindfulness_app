@@ -12,35 +12,36 @@ so that I can keep a list of quotes to read every day
 
 ## Acceptance Criteria
 
-Given a mindfulness application
-When I load the serene soul page
-Then I am presented with a menu with the options search for Quotes and Login/Signup and an input field to search for quotes and a submit button
-When I click on the Search for Quotes menu option
-Then I am presented with an input field to search for Quotes and a submit button
-When I am not logged in and enter a search term in the input field and click the submit button
-Then I am presented with several search results, each featuring a quote’s title, author, description, image, and a link to that quote on the Google Quotes site
-When I click on the Login/Signup menu option
-Then a modal appears on the screen with a toggle between the option to log in or sign up
-When the toggle is set to Signup
-Then I am presented with three inputs for a username, an email address, and a password, and a signup button
-When the toggle is set to Login
-Then I am presented with two inputs for an email address and a password and login button
-When I enter a valid email address and create a password and click on the signup button
-Then my user account is created and I am logged in to the site
-When I enter my account’s email address and password and click on the login button
-Then I the modal closes and I am logged in to the site
-When I am logged in to the site
-Then the menu options change to Search for Quotes, an option to see my saved Quotes, and Logout
-When I am logged in and enter a search term in the input field and click the submit button
-Then I am presented with several search results, each featuring a quote’s title, author, description, image, and a link to that quote on the Google Quotes site and a button to save a quote to my account
-When I click on the Save button on a quote
-Then that quote’s information is saved to my account
-When I click on the option to see my saved Quotes
-Then I am presented with all of the Quotes I have saved to my account, each featuring the quote’s title, author, description, image, and a link to that quote on the Google Quotes site and a button to remove a quote from my account
-When I click on the Remove button on a quote
-Then that quote is deleted from my saved Quotes list
-When I click on the Logout button
-Then I am logged out of the site and presented with a menu with the options Search for Quotes and Login/Signup and an input field to search for Quotes and a submit button 
+GIVEN a daily motivational app
+WHEN I load the app
+THEN I am presented with a daily quote and menu options for logging in, quotes, or affirmations
+WHEN I click on login
+THEN I am presented with a page to login or signup
+WHEN I click on sign up
+THEN I am presented with three inputs for a username, an email address, and a password and a
+           signup button
+WHEN I enter a valid email address and create a password and click on the submit button
+THEN my user account is created and I am logged into the site
+WHEN I click on login
+THEN I am presented with two inputs for an email address and a password and login button
+WHEN I enter my accounts email address and password and click on the login button
+THEN I am logged into the site
+WHEN I am logged into the site
+THEN I see my profile with any saved quotes and an add quote button
+WHEN I click on the add quote button
+THEN I am presented with an input field to write a personal quote and a submit button
+WHEN I click the submit button
+THEN the quote is added to the database
+WHEN I click on affirmations in the navbar
+THEN I am presented with categories to choose from
+WHEN I click on affirmation
+THEN I am presented with an option to save the affirmation to my profile
+WHEN I click on quote in the navbar
+THEN I am presented with categories to choose from
+WHEN I click on a quote
+THEN I am presented with the option to save the quote to my profile
+WHEN I click on the Logout button
+THEN I am logged out of the site and presented with the homepage
 
 ##
 
