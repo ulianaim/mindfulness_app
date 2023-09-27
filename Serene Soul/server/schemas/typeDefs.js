@@ -22,18 +22,19 @@ const typeDefs = gql`
         }
 
     type Query {
+        users: [User]!
         quotes: [Quote]!
         quote(quoteId: ID!): Quote   
-        user(userId: ID!): User
+        user(username: String!): User
         }
 
   type Mutation {    
         login(email: String!, password: String!): Auth
-        addQuote(quoteText: String!, quoteAuthor: String!): Quote
+        addQuote(quoteText: String!, quoteAuthor: String!, createdAt: String!): Quote
         removeQuote(quoteId: String!): Quote
         updateQuote(quoteId: String!, quoteText: String!, quoteAuthor: String!): Quote
         addUser(username: String!, email: String!, password: String!): User
-        removeUser(userId: String!): User
+        removeUser(userId: ID!): User
         }`;
 
 module.exports = typeDefs;
