@@ -1,13 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-
-import QuotesList from '../components/QuotesList'
-
+import QuotesList from '../components/QuotesList';
 import { QUERY_QUOTES } from '../utils/queries';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_QUOTES);
   const quotes = data?.quotes || [];
+
 
   return (
     <main>
