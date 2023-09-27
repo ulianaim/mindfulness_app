@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import Quotes from './pages/Quotes';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Navbar from './src/components/Navbar';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -41,6 +42,7 @@ const httpLink = createHttpLink({
         <Router>
           <div>
             <Header />
+            <Navbar/>
             <div>
               <Routes>
                 <Route 
