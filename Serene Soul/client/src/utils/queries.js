@@ -26,14 +26,15 @@ query user($username: String!) {
 }`
 
 export const QUERY_QUOTES = gql`
-query getQuotes {
+query Quotes {
     quotes {
-        _id
-        quoteText
-        quoteAuthor
-        createdAt
+      _id
+      createdAt
+      quoteAuthor
+      quoteText
     }
-}`
+  }
+  `
 
 export const QUERY_SINGLE_QUOTE = gql`
 query getSingleQuote($quoteId: ID!) {
