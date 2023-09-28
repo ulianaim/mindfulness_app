@@ -29,10 +29,11 @@ export const ADD_QUOTE = gql`
         username
         email
         password
-  }`
+    }
+      }`
 
 export const UPDATE_QUOTE = gql`
-mutation updateQuote($quoteId: String!, $quoteText: String!, $quoteAuthor: String!)
+mutation updateQuote($quoteId: String!, $quoteText: String!, $quoteAuthor: String!){
     updateQuote(quoteId: $quoteId, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
         _id
         username
@@ -43,14 +44,16 @@ mutation updateQuote($quoteId: String!, $quoteText: String!, $quoteAuthor: Strin
             quoteAuthor
             createdAt
         }
-    }`
+    }
+  }`
   
 
 export const REMOVE_QUOTE = gql`
   mutation removeQuote($quoteId: String!) {
-    removeQuote(quoteId: $quoteId)
+    removeQuote(quoteId: $quoteId) {
     _id
     username
     email
     password
-  }`
+  }
+}`
