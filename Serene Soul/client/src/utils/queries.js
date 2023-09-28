@@ -1,23 +1,62 @@
 import { gql } from '@apollo/client';
 
-export const GET_ME = gql `
-{
-    me {
-        email
+export const QUERY_USERS = gql`
+query getUsers {
+    users {
+        _id
         username
+        email
         password
-        quotes {
-            message
-            author
-            date
+    }
+}`
+
+export const QUERY_USER = gql `
+query user($username: String!) {
+    user(username: $username) {
+    _id
+    username
+    email
+    quotes {
+        _id
+        quoteText
+        quoteAuthor
+        createdAt
         }
     }
 }`
 
-export const GET_QUOTES = gql`
-{
+export const QUERY_QUOTES = gql`
+query getQuotes {
     quotes {
-        message
-        author
+        _id
+        quoteText
+        quoteAuthor
+        createdAt
     }
 }`
+
+export const QUERY_SINGLE_QUOTE = gql`
+query getSingleQuote($quoteId: ID!) {
+    quote(quoteId: $quoteId) {
+        _id
+        quoteText
+        quoteAuthor
+        createdAt
+    }
+}`
+
+export const QUERY_MY_QUOTES = gql`
+query getMyQuotes($username: String!) {
+    myQuote(username: $username) {
+        _id
+        username
+        email
+        quotes {
+            _id
+            quoteText
+            quoteAuthor
+            createdAt
+        }
+    }
+}`
+
