@@ -12,10 +12,9 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import Quotes from './pages/Quotes';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Navbar from './src/components/Navbar';
+import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -65,11 +64,8 @@ const httpLink = createHttpLink({
                   path="/profile/:username" 
                   element={<Profile />}
                 />
-                <Route 
-                  path="/Quotes" 
-                  element={<Quotes />}
-                />
-              </Routes>
+                 
+              </Routes> 
             </div>
             <Footer />
           </div>

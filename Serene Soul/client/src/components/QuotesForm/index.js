@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_QUOTE } from '../../utils/mutations';
-import { QUERY_QUOTES, QUERY_ME } from '../../utils/queries';
+import { QUERY_QUOTES, QUERY_USER } from '../../utils/queries';
 
 // import {MY_QUOTES} from '../utils/queries';
 // import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
@@ -29,9 +29,9 @@ const QuoteForm = () => {
       }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
+      const { me } = cache.readQuery({ query: QUERY_USER});
       cache.writeQuery({
-        query: QUERY_ME,
+        query: QUERY_USER,
         data: { me: { ...me, quotes: [...me.quotes, addQuote] } },
       });
     },
@@ -81,9 +81,9 @@ const QuoteForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
-                value={thoughtText}
+                name="Quote"
+                placeholder="Quote"
+                value={quoteText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
