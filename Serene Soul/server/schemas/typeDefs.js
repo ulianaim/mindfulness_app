@@ -13,7 +13,8 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        password: String            
+        password: String 
+        quotes: [Quote]
         }
           
     type Auth {
@@ -30,7 +31,7 @@ const typeDefs = gql`
 
   type Mutation {    
         login(email: String!, password: String!): Auth
-        addQuote(quoteText: String!, quoteAuthor: String!, createdAt: String!): Quote
+        addQuote(username: String!, quoteText: String!, quoteAuthor: String!): Quote
         removeQuote(quoteId: String!): Quote
         updateQuote(quoteId: String!, quoteText: String!, quoteAuthor: String!): Quote
         addUser(username: String!, email: String!, password: String!): User
