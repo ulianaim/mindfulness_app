@@ -4,7 +4,7 @@ import MyQuotes from "../components/MyQuotes";
 import QuotesForm from "../components/QuotesForm";
 
 const Profile = () => {
-    const { loading } = useQuery();
+    const { loading, data } = useQuery();
     const myquotes = data?.myquotes || [];
 
     return (

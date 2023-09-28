@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USERS = gql`
-query getUsers {
+query Users {
     users {
         _id
         username
@@ -11,40 +11,37 @@ query getUsers {
 }`
 
 export const QUERY_USER = gql `
-query user($username: String!) {
+query User($username: String!) {
     user(username: $username) {
-    _id
-    username
-    email
-    quotes {
-        _id
-        quoteText
-        quoteAuthor
-        createdAt
-        }
+      _id
+      username
+      email
+      password
+      quotes {
+       _id 
+      }
     }
-}`
+  }`
 
 export const QUERY_QUOTES = gql`
 query Quotes {
     quotes {
       _id
-      createdAt
-      quoteAuthor
       quoteText
+      quoteAuthor
+      createdAt
     }
-  }
-  `
+  }`
 
 export const QUERY_SINGLE_QUOTE = gql`
-query getSingleQuote($quoteId: ID!) {
+query Quote($quoteId: ID!) {
     quote(quoteId: $quoteId) {
-        _id
-        quoteText
-        quoteAuthor
-        createdAt
+      _id
+      quoteText
+      quoteAuthor
+      createdAt
     }
-}`
+  }`
 
 export const QUERY_MY_QUOTES = gql`
 query getMyQuotes($username: String!) {
