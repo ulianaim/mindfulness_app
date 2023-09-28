@@ -44,13 +44,16 @@ const resolvers = {
 
       return { token, user };
     },
-    addQuote: async (parent, { quoteText, quoteAuthor, createdAt }) => {
+    addQuote: async (parent, { username, quoteText, quoteAuthor, createdAt }) => {
+      const user = await User.findOne({username});
       const quote = await Quote.create({ quoteText, quoteAuthor, createdAt });
 
-      await User.findOneAndUpdate(
-        { username: quoteText, quoteAuthor },
-        { $addToSet: { quotes: quote._id } }
-      );
+    //   await User.findOneAndUpdate(
+    //     { username: quoteText, quoteAuthor },
+    //     { $addToSet: { quotes: quote._id } }
+    //   );
+    user.quotes.push(quote._id);
+    await user.save()
 
       return quote;
     },

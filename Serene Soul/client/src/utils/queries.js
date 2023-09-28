@@ -45,3 +45,18 @@ query getSingleQuote($quoteId: ID!) {
     }
 }`
 
+export const QUERY_MY_QUOTES = gql`
+query getMyQuotes($username: String!) {
+    myQuote(username: $username) {
+        _id
+        username
+        email
+        quotes {
+            _id
+            quoteText
+            quoteAuthor
+            createdAt
+        }
+    }
+}`
+
