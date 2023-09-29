@@ -1,12 +1,14 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
+
 function Navbar() {
   return (
+// css_styling
     <nav className="sticky">
       <Link to = "/">Home</Link>
       {Auth.loggedIn() ? (
-        <Link to = "/My_Profile">My Profile</Link>
+        <Link to = "/profile/:username">My Profile</Link>
       ) : (
         <></>
       )
@@ -16,3 +18,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
