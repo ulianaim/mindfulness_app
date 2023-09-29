@@ -16,7 +16,9 @@ const QuoteForm = () => {
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addQuote, { error }] = useMutation(ADD_QUOTE, {
+   
     update(cache, { data: { addQuote } }) {
+      console.log(addQuote)
       try {
         const { quotes } = cache.readQuery({ query: QUERY_QUOTES });
 
