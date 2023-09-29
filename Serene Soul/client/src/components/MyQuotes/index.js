@@ -1,12 +1,13 @@
+import { useQuery } from '@apollo/client'; 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { QUERY_MY_QUOTES } from '../../utils/queries';
 
 const MyQuotes = ({ quotes, title }) => {
   const { loading, data } = useQuery(QUERY_MY_QUOTES);
-  if (!quotes.length) {
-    return <h3>No Quotes Yet</h3>;
-  }
+  // if (!quotes.length) {
+  //   return <h3>No Quotes Yet</h3>;
+  // }
 
   return (
     <div>
