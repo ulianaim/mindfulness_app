@@ -11,14 +11,17 @@ query Users {
 }`
 
 export const QUERY_USER = gql `
-query User($username: String!) {
-    user(username: $username) {
+query User {
+    user {
       _id
       username
       email
       password
       quotes {
        _id 
+       quoteText
+      quoteAuthor
+      createdAt
       }
     }
   }`

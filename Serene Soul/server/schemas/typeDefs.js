@@ -27,7 +27,9 @@ const typeDefs = gql`
         quotes: [Quote]!
         quote(quoteId: ID!): Quote   
         user(username: String!): User
+        myQuote(username: String!): User
         }
+    
 
   type Mutation {    
         login(email: String!, password: String!): Auth

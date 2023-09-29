@@ -57,10 +57,6 @@ const httpLink = createHttpLink({
                   element={<Signup />}
                 />
                 <Route 
-                  path="/me" 
-                  element={<Profile />}
-                />
-                <Route 
                   path="/profile/:username" 
                   element={<Profile />}
                 />

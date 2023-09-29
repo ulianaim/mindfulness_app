@@ -1,10 +1,13 @@
-
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import MyQuotes from "../components/MyQuotes";
 import QuotesForm from "../components/QuotesForm";
+import { QUERY_MY_QUOTES } from '../utils/queries';
 
 const Profile = () => {
-    const { loading, data } = useQuery();
+  const {username} = useParams() 
+    const { loading, data } = useQuery(QUERY_MY_QUOTES, {variables: {username: username}});
+    console.log(data)
     const myquotes = data?.myquotes || [];
 
     return (

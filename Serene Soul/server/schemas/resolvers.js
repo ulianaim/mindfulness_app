@@ -5,17 +5,21 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return await User.find();
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('quotes');
+      return await User.findOne({ username }).populate('quotes');
     },
     quotes: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Quote.find(params).sort({ createdAt: -1 });
+      return await Quote.find(params).sort({ createdAt: -1 });
     },
     quote: async (parent, { quoteId }) => {
-      return Quote.findOne({ _id: quoteId });
+      return await Quote.findOne({ _id: quoteId });
+    },
+    myQuote: async (parent, { username }) => {
+      console.log(username)
+      return await User.findOne({ username }).populate('quotes');
     },
   },
 
