@@ -37,8 +37,29 @@ body {
   min-height: 100vh;
 }
 
+header {
+  background-image: url("../src/assets/header.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center; /* Center vertically */
+}
+
+footer {
+  background-image: radial-gradient(circle, var(--foamlight), var(--chambray));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+}
+
 .card {
-  background-color: var(--foam); /* add opacity */
+  background-color: rgba(204, 252, 235, 0.45); /* add opacity for softening */
   border-radius: 8px; /* Rounded corners */
   padding: 2em;
   margin: 0 auto;
