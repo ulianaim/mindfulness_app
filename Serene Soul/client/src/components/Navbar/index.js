@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
-      <Link to = "/"></Link>
+css_styling
+    <nav className="sticky">
+      <Link to = "/">Home</Link>
       {Auth.loggedIn() ? (
         <Link to = "/profile/:username">My Profile</Link>
       ) : (

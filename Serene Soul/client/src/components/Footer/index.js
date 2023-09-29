@@ -5,8 +5,8 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container text-center mb-5">
+    <footer className="w-100 mt-auto p-4">
+      <div className="text-center mb-5">
         {location.pathname !== '/' && (
           <button
             className="btn btn-dark mb-3"
@@ -15,9 +15,10 @@ const Footer = () => {
             &larr; Go Back to the Home Page
           </button>
         )}
-        <h4>
-          "Hapiness is not by chance, but by choice ❤ "
+        <h4 className="justify-center">
+          "Happiness is not by chance, but by choice ❤ "
         </h4>
+        <h6 className="justify-center"> &copy; 2023 Marianna Bruns, Uliana Imangulova, Lexi Geller, Amazing Grace, & Isoel Rodriguez</h6>
       </div>
     </footer>
   );
