@@ -33,6 +33,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -40,8 +41,20 @@ body {
 header {
   background-image: url("../src/assets/header.jpg");
   background-size: cover;
-  width:auto;
   border-radius: 8px;
+}
+
+main {
+  padding-bottom: 8%;
+  padding-top: 5%;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.text-dark {
+  color: var(--chambray);
 }
 
 .w-100 {
@@ -55,6 +68,10 @@ header {
 
 .align-center {
   align-items: center; /* Center vertically */
+}
+
+.text-center {
+  text-align: center;
 }
 
 .justify-space-between {
@@ -75,17 +92,40 @@ header {
   margin: 2;
 }
 
+.m-3 {
+  margin: 3;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-3 {
+  margin-bottom: 3;
+}
+
+.mb-5 {
+  margin-bottom: 5;
+}
+
+.p-4 {
+  padding: 4;
+}
+
+.form-input {
+  background-color: var(--chambray);
+}
+
 footer {
   background-image: radial-gradient(circle, var(--foamlight), var(--chambray));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   width: 100%;
+  border-radius: 8px;
 }
 
 .card {
   background-color: rgba(204, 252, 235, 0.45); /* add opacity for softening */
   border-radius: 8px; /* Rounded corners */
-  padding: 2em;
-  margin: 0 auto;
   max-width: 600px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   border: 1px solid rgba(0, 0, 0, 0.1);

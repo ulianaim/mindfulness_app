@@ -9,10 +9,10 @@ const Header = () => {
   };
 
   return (
-    <header className="card">
+    <header className="card sticky">
       <div className="card justify-center">
         <div>  
-          <Link className="text-light" to="/">
+          <Link to="/">
             {}
             <img
               src="/logo.svg"
@@ -32,10 +32,10 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2 justify-space-between justify-center" to="/login">
+              <Link className="btn btn-lg btn-info m-2 justify-space-between justify-center text-dark" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2 justify-space-between justify-center" to="/signup">
+              <Link className="btn btn-lg btn-light m-2 justify-space-between justify-center text-dark" to="/signup">
                 Signup
               </Link>
             </>
