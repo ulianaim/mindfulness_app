@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-css_styling
+// css_styling
     <nav className="sticky">
       <Link to = "/">Home</Link>
       {Auth.loggedIn() ? (
