@@ -1,5 +1,6 @@
 :root {
   --foam: #ccfceb;
+  --foamlight: #B3E1D9;
   --chambray: #355b7e;
   --easternblue: #2692b9;
 
@@ -9,7 +10,7 @@
 
   color-scheme: light dark;
   color: var(--chambray);
-  background-color: var(--foam);
+  background-color: var(--foamlight);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,6 +35,16 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.card {
+  background-color: var(--foam); /* add opacity */
+  border-radius: 8px; /* Rounded corners */
+  padding: 2em;
+  margin: 0 auto;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 h1 {
