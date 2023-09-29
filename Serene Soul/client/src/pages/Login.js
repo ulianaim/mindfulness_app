@@ -45,7 +45,7 @@ const Login = (props) => {
       <div className="card">
         <div className="align-center">
           <h4>Login</h4>
-          <div className="">
+          <div className="form-container">
             {data ? (
               <p>
                 Success! You may now head{' '}

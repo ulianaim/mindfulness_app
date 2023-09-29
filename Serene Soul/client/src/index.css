@@ -113,7 +113,18 @@ main {
 }
 
 .form-input {
-  background-color: var(--chambray);
+  background-color: rgba(53, 91, 126, 0.5); /* Adjust the color values and opacity (0.7) as needed */
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+input::placeholder {
+  color: #cee3eaa4;
+}
+
+.form-container {
+  margin-bottom: 20px;
 }
 
 footer {
