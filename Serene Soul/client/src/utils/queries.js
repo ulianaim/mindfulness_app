@@ -18,10 +18,10 @@ query User {
       email
       password
       quotes {
-       _id 
-       quoteText
-      quoteAuthor
-      createdAt
+        _id 
+        quoteText
+        quoteAuthor
+        createdAt
       }
     }
   }`
