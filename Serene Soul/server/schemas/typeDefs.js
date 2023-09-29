@@ -34,7 +34,7 @@ const typeDefs = gql`
         addQuote(username: String!, quoteText: String!, quoteAuthor: String!): Quote
         removeQuote(quoteId: String!): Quote
         updateQuote(quoteId: String!, quoteText: String!, quoteAuthor: String!): Quote
-        addUser(username: String!, email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): Auth
         removeUser(userId: ID!): User
         }`;
 
