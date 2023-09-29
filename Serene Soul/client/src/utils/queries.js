@@ -18,7 +18,10 @@ query User($username: String!) {
       email
       password
       quotes {
-       _id 
+        _id 
+        quoteText
+        quoteAuthor
+        createdAt
       }
     }
   }`
