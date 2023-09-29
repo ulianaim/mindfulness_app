@@ -40,4 +40,4 @@ Then I am presented with all of the Quotes I have saved to my account, each feat
 When I click on the Remove button on a quote
 Then that quote is deleted from my saved Quotes list
 When I click on the Logout button
-Then I am logged out of the site and presented with a menu with the options Search for Quotes and Login/Signup and an input field to search for Quotes and a submit button  
+Then I am logged out of the site
