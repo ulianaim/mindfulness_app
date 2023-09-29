@@ -40,6 +40,11 @@ body {
 header {
   background-image: url("../src/assets/header.jpg");
   background-size: cover;
+  width:auto;
+  border-radius: 8px;
+}
+
+.w-100 {
   width: 100%;
 }
 
@@ -50,6 +55,24 @@ header {
 
 .align-center {
   align-items: center; /* Center vertically */
+}
+
+.justify-space-between {
+  display: flex;
+  justify-content: space-between; /* Distribute space between children */
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center; /* Center children horizontally */
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-2 {
+  margin: 2;
 }
 
 footer {

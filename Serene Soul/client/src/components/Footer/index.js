@@ -15,9 +15,10 @@ const Footer = () => {
             &larr; Go Back to the Home Page
           </button>
         )}
-        <h4>
-          "Hapiness is not by chance, but by choice ❤ "
+        <h4 className="justify-center">
+          "Happiness is not by chance, but by choice ❤ "
         </h4>
+        <h6 className="justify-center"> &copy; 2023 Marianna Bruns, Uliana Imangulova, Lexi Geller, Amazing Grace, & Isoel Rodriguez</h6>
       </div>
     </footer>
   );
