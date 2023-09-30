@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
 import { ADD_QUOTE } from '../../utils/mutations';
-import { QUERY_QUOTES, QUERY_USER } from '../../utils/queries';
-
-// import {MY_QUOTES} from '../utils/queries';
-// import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
-
 import Auth from '../../utils/auth';
 
 const QuoteForm = () => {
@@ -26,13 +19,12 @@ const QuoteForm = () => {
     try {
       await addQuote({
         variables: {
-          username: "iis4u2nv", 
+          username: "", 
           quoteText,
           quoteAuthor: Auth.getProfile().data.username,
         },
       });
 
-      //setQuoteText('');
     } catch (err) {
       console.error(err);
     }
