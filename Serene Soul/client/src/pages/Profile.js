@@ -3,12 +3,16 @@ import { useQuery } from '@apollo/client';
 import MyQuotes from "../components/MyQuotes";
 import QuotesForm from "../components/QuotesForm";
 import { QUERY_MY_QUOTES } from '../utils/queries';
+import QuotesList from '../components/QuotesList';
+import { QUERY_QUOTES } from '../utils/queries';
 
 const Profile = () => {
   const {username} = useParams() 
-    const { loading, data } = useQuery(QUERY_MY_QUOTES, {variables: {username: username}});
-    console.log(data)
-    const myquotes = data?.myquotes || [];
+  const { loading, data } = useQuery(QUERY_QUOTES);
+    // const { loading, data } = useQuery(QUERY_MY_QUOTES, {variables: {username: username}});
+    //console.log(data)
+    // const myquotes = data?.myquotes || [];
+    const quotes = data?.quotes || [];
 
     return (
         <main>
@@ -20,10 +24,11 @@ const Profile = () => {
               ) : (
                 <>
                 <QuotesForm/>
-                <MyQuotes
-                  myquotes={myquotes}
-                  title="My Saved Quotes"
-                />
+                <QuotesList
+              quotes={quotes}
+              title="My saved Quotes"
+            />
+
                 </>
               )}
             </div>

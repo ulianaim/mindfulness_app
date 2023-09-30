@@ -17,43 +17,26 @@ const QuoteForm = () => {
 
   const [addQuote, { error }] = useMutation(ADD_QUOTE, {
    
-    update(cache, { data: { addQuote } }) {
-      console.log(addQuote)
-      try {
-        const { quotes } = cache.readQuery({ query: QUERY_QUOTES });
 
-        cache.writeQuery({
-          query: QUERY_QUOTES,
-          data: { quotes: [addQuote, ...quotes] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_USER});
-      cache.writeQuery({
-        query: QUERY_USER,
-        data: { me: { ...me, quotes: [...me.quotes, addQuote] } },
-      });
-    },
   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addQuote({
+      await addQuote({
         variables: {
+          username: "iis4u2nv", 
           quoteText,
           quoteAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setQuoteText('');
+      //setQuoteText('');
     } catch (err) {
       console.error(err);
     }
+    window.location.reload()
   };
 
   const handleChange = (event) => {
