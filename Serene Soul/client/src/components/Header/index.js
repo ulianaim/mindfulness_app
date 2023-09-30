@@ -25,7 +25,7 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <span>Welcome {Auth.getProfile().data.username}!</span>
+              <span>Welcome, {Auth.getProfile().data.username}!</span>
               <button className="btn btn-lg m-2 justify-space-between" onClick={logout}>
                 Logout
               </button>
