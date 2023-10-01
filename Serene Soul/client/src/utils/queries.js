@@ -47,7 +47,7 @@ query Quote($quoteId: ID!) {
   }`
 
 export const QUERY_MY_QUOTES = gql`
-query getMyQuotes($username: String!) {
+query MyQuotes($username: String!) {
     myQuote(username: $username) {
         _id
         username
