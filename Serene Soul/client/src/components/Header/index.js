@@ -14,7 +14,7 @@ const Header = () => {
         <div>  
           <Link to="/">
             {}
-            <img
+            <img className="logo"
               src="/logo.svg"
               alt="SereneSoul Logo"
               height="80"
