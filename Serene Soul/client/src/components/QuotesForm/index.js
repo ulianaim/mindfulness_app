@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
 import { ADD_QUOTE } from '../../utils/mutations';
-import { QUERY_QUOTES, QUERY_USER } from '../../utils/queries';
-
-// import {MY_QUOTES} from '../utils/queries';
-// import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
-
 import Auth from '../../utils/auth';
 
 const QuoteForm = () => {
@@ -17,43 +10,25 @@ const QuoteForm = () => {
 
   const [addQuote, { error }] = useMutation(ADD_QUOTE, {
    
-    update(cache, { data: { addQuote } }) {
-      console.log(addQuote)
-      try {
-        const { quotes } = cache.readQuery({ query: QUERY_QUOTES });
 
-        cache.writeQuery({
-          query: QUERY_QUOTES,
-          data: { quotes: [addQuote, ...quotes] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_USER});
-      cache.writeQuery({
-        query: QUERY_USER,
-        data: { me: { ...me, quotes: [...me.quotes, addQuote] } },
-      });
-    },
   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addQuote({
+      await addQuote({
         variables: {
+          username: "", 
           quoteText,
           quoteAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setQuoteText('');
     } catch (err) {
       console.error(err);
     }
+    window.location.reload()
   };
 
   const handleChange = (event) => {
