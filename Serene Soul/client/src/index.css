@@ -41,7 +41,6 @@ body {
 header {
   background-image: url("../src/assets/header.jpg");
   background-size: cover;
-  border-radius: 8px;
 }
 
 main {
@@ -127,24 +126,16 @@ input::placeholder {
   color: #cee3eaa4;
 }
 
-input.form-input:focus {
-  outline-color: chartreuse;
-}
-
 .form-container {
   margin-bottom: 20px;
 }
 
 footer {
   background-image: radial-gradient(circle, var(--foamlight), var(--chambray));
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: 100%;
-  border-radius: 8px;
 }
 
 .card {
   background-color: rgba(204, 252, 235, 0.45); /* add opacity for softening */
-  border-radius: 8px; /* Rounded corners */
   max-width: 600px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 2em;
@@ -152,6 +143,7 @@ footer {
 
 header, footer, button, .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
 }
 
 h1 {
@@ -172,6 +164,7 @@ h1 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 1em var(--easternblue));
 }
@@ -195,7 +188,11 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: var(--easternblue);
+  border-style: inset;
+  background-color: var(--foam);
+  color: var(--chambray);
+  opacity: 0.4;
 }
 
 button:focus,
