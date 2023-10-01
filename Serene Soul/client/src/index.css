@@ -119,8 +119,16 @@ main {
   border-radius: 8px;
 }
 
+input {
+  border-color: var(--chambray);
+}
+
 input::placeholder {
   color: #cee3eaa4;
+}
+
+input.form-input:focus {
+  outline-color: chartreuse;
 }
 
 .form-container {

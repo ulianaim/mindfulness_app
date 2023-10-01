@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-// css_styling
     <nav className="sticky">
       <Link to = "/">Home</Link>
       {Auth.loggedIn() ? (
@@ -18,5 +17,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
