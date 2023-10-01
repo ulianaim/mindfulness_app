@@ -41,6 +41,16 @@ body {
 header {
   background-image: url("../src/assets/header.jpg");
   background-size: cover;
+  text-shadow: 2px 2px 3px rgba(204, 252, 235, 0.5);
+}
+
+nav {
+  display: inline;
+  padding: 0.7rem;
+  margin: 0.5rem 0.75rem;
+  background:var(--chambray);
+  border-radius: 8px;
+  color: var(--foam);
 }
 
 main {
@@ -141,7 +151,7 @@ footer {
   padding: 2em;
 }
 
-header, footer, button, .card {
+header, footer, button, nav, .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   border-radius: 8px; /* Rounded corners */
 }
