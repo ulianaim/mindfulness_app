@@ -38,9 +38,9 @@ const MyQuotes = ({ title }) => {
     <div>
       <h3>{title}
       {userData?.quotes?.length ? (
-        `Viewing ${userData.quotes.length} saved 
+        `Viewing ${userData.quotes.length}'s saved 
         ${userData.quotes.length === 1 ? 'quote' : 'quotes'}:`
-      ) : ( 'You have no saved quotes!')}
+      ) : ( 'You have not added any quotes!')}
       </h3>
       {userData?.quotes?.map((quote) => (
           <div key={quote._id} className="card mb-3">
