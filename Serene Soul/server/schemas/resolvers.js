@@ -50,6 +50,8 @@ const resolvers = {
     },
     addQuote: async (parent, { username, quoteText, quoteAuthor, createdAt }) => {
       const user = await User.findOne({username});
+
+
       const quote = await Quote.create({ quoteText, quoteAuthor, createdAt });
 
     //   await User.findOneAndUpdate(
