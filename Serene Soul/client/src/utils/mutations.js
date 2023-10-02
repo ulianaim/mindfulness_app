@@ -23,9 +23,10 @@ export const ADD_USER = gql`
     }`
 
 export const ADD_QUOTE = gql`
-  mutation addQuote($quoteText: String!) {
-    addQuote(quoteText: $quoteText) {
+  mutation addQuote($username: String!, $quoteText: String!, $quoteAuthor: String!) {
+    addQuote(username: $username, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
         quoteText
+        quoteAuthor
     }
       }`
 
