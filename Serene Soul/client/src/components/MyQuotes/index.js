@@ -26,6 +26,7 @@ const MyQuotes = ({ title }) => {
     try {
     const token = Auth.getToken();
     if (!token) {
+      console.log(token)
       return;
     }
 
