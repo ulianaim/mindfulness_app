@@ -11,20 +11,20 @@ query Users {
 }`
 
 export const QUERY_USER = gql `
-query User {
-    user {
+query User($username: String!) {
+  user(username: $username) {
+    _id
+    username
+    email
+    password
+    quotes {
       _id
-      username
-      email
-      password
-      quotes {
-        _id 
-        quoteText
-        quoteAuthor
-        createdAt
-      }
+      quoteText
+      quoteAuthor
+      createdAt
     }
-  }`
+  }
+}`
 
 export const QUERY_QUOTES = gql`
 query Quotes {
@@ -47,17 +47,12 @@ query Quote($quoteId: ID!) {
   }`
 
 export const QUERY_MY_QUOTES = gql`
-query getMyQuotes($username: String!) {
-    myQuote(username: $username) {
-        _id
-        username
-        email
-        quotes {
-            _id
-            quoteText
-            quoteAuthor
-            createdAt
-        }
-    }
+query Query($username: String!) {
+  myQuote(username: $username) {
+    _id
+    quoteText
+    quoteAuthor
+    createdAt
+  }
 }`
 
