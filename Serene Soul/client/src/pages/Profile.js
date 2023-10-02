@@ -7,9 +7,7 @@ import {QUERY_MY_QUOTES} from '../utils/queries';
 import MyQuotes from '../components/MyQuotes';
 
 const Profile = () => {
-  const {username} = useParams() 
   const { loading, data } = useQuery(QUERY_MY_QUOTES);
-    const quotes = data?.myQuote || [];
 
     return (
         <main>
@@ -21,11 +19,7 @@ const Profile = () => {
               ) : (
                 <>
                 <QuotesForm/>
-                <MyQuotes
-              // quotes={quotes}
-              // title="My Quotes"
-            />
-
+                <MyQuotes/>
                 </>
               )}
             </div>

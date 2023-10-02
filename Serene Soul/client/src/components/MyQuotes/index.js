@@ -26,6 +26,7 @@ const MyQuotes = ({ title }) => {
     try {
     const token = Auth.getToken();
     if (!token) {
+      console.log(token)
       return;
     }
 
@@ -33,6 +34,8 @@ const MyQuotes = ({ title }) => {
     } catch (err) {
       console.error(err);
     }
+    window.location.reload()
+
   };
 
   if (loading){
