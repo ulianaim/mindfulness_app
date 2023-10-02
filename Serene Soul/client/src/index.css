@@ -4,9 +4,9 @@
   --chambray: #355b7e;
   --easternblue: #2692b9;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 
   color-scheme: light dark;
   color: var(--chambray);
@@ -41,7 +41,19 @@ body {
 header {
   background-image: url("../src/assets/header.jpg");
   background-size: cover;
+  font-family: 'Domine', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 2px 2px 3px rgba(204, 252, 235, 0.5);
+}
+
+nav {
+  display: inline;
+  padding: 0.7rem;
+  margin: 0.5rem 0.75rem;
+  background:var(--chambray);
   border-radius: 8px;
+  color: var(--foam);
 }
 
 main {
@@ -84,6 +96,10 @@ main {
   justify-content: center; /* Center children horizontally */
 }
 
+.p-0 {
+  padding: 0;
+}
+
 .m-0 {
   margin: 0;
 }
@@ -113,22 +129,46 @@ main {
 }
 
 .form-input {
-  background-color: var(--chambray);
+  background-color: rgba(53, 91, 126, 0.5);
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+input {
+  border-color: var(--chambray);
+}
+
+input::placeholder {
+  color: #cee3eaa4;
+}
+
+.form-container {
+  margin-bottom: 20px;
 }
 
 footer {
   background-image: radial-gradient(circle, var(--foamlight), var(--chambray));
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: 100%;
-  border-radius: 8px;
+  text-shadow: 2px 2px 3px rgba(204, 252, 235, 0.5);
+  font-family: 'Domine', serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+footer button {
+  font-family: 'Manrope', sans-serif;
 }
 
 .card {
   background-color: rgba(204, 252, 235, 0.45); /* add opacity for softening */
-  border-radius: 8px; /* Rounded corners */
   max-width: 600px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2em;
+}
+
+header, footer, button, nav, .card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
 }
 
 h1 {
@@ -145,29 +185,20 @@ h1 {
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: 0em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  filter: drop-shadow(0 0 1em var(--easternblue));
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+  margin: 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -178,7 +209,11 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: var(--easternblue);
+  border-style: inset;
+  background-color: var(--foam);
+  color: var(--chambray);
+  opacity: 0.4;
 }
 
 button:focus,

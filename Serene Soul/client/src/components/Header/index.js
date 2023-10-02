@@ -14,13 +14,13 @@ const Header = () => {
         <div>  
           <Link to="/">
             {}
-            <img
+            <img className="logo"
               src="/logo.svg"
               alt="SereneSoul Logo"
               height="80"
             />
           </Link>
-          <p className="">Acknowledge, accept, and honor that you deserve your own deepest compassion and love</p>
+          <p className="p-0 m-0">Acknowledge, accept, and honor that you deserve your own deepest compassion and love</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
