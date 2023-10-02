@@ -135,11 +135,11 @@ main {
   border-radius: 8px;
 }
 
-input {
+input, textarea {
   border-color: var(--chambray);
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: #cee3eaa4;
 }
 
