@@ -18,7 +18,7 @@ const Footer = () => {
         <h4 className="justify-center">
           "Happiness is not by chance, but by choice ❤ "
         </h4>
-        <h6 className="justify-center"> &copy; 2023 Marianna Bruns, Uliana Imangulova, Lexi Geller, Amazing Grace, & Isoel Rodriguez</h6>
+        <h6 className="justify-center"> &copy; 2023 Marianna Bruns, Uliana Imangulova, Lexi Geller, & Amazing Grace</h6>
       </div>
     </footer>
   );
