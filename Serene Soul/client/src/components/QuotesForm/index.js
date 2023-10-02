@@ -19,7 +19,7 @@ const QuoteForm = () => {
     try {
       await addQuote({
         variables: {
-          username: "", 
+          username: Auth.getProfile().data.username, 
           quoteText,
           quoteAuthor: Auth.getProfile().data.username,
         },
