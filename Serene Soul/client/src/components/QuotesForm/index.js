@@ -53,10 +53,10 @@ const QuoteForm = () => {
             Character Count: {characterCount}/280
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="flex-row justify-center justify-space-between align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="card">
               <textarea
                 name="Quote"
                 placeholder="Quote"
@@ -67,7 +67,7 @@ const QuoteForm = () => {
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
+            <div className="card">
               <button className="btn btn-primary btn-block py-3" type="submit">
                 Add 
               </button>
