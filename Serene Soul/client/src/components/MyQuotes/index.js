@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from '@apollo/client'; 
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { QUERY_USER } from '../../utils/queries';
 import {REMOVE_QUOTE} from '../../utils/mutations'
@@ -14,8 +14,7 @@ const MyQuotes = ({ title }) => {
     variables: {username: currentUsername}
   });
   const [removeQuote] = useMutation(REMOVE_QUOTE)
-  console.log(data);
-  console.log("test123");
+  console.log(userData);
 
   useEffect(() => {
     if (!loading && !error && data && data.getUserData) {
@@ -44,7 +43,7 @@ const MyQuotes = ({ title }) => {
     <div>
       <h3>{title}
       {data?.user.quotes?.length ? (
-        `Viewing ${data.user.quotes.length}'s saved 
+        `Viewing ${data.user.quotes.length} saved 
         ${data.user.quotes.length === 1 ? 'quote' : 'quotes'}:`
       ) : ( 'You have not added any quotes!')}
       </h3>
@@ -52,7 +51,7 @@ const MyQuotes = ({ title }) => {
           <div key={quote._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
               <span style={{ fontSize: '1rem' }}>
-                added this quote on {quote.createdAt}
+                This Quote was added on {quote.createdAt}
               </span>
             </h4>
             <div className="card-body bg-light p-2">
