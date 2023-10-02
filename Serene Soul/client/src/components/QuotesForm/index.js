@@ -56,19 +56,18 @@ const QuoteForm = () => {
             className="flex-row justify-center justify-space-between align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="card">
-              <textarea
+            <div className="form-container justify-center">
+              <textarea className="form-input"
                 name="Quote"
                 placeholder="Quote"
                 value={quoteText}
-                className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-            <div className="card">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <div className="form-container">
+              <button className="btn btn-block btn-primary" type="submit">
                 Add 
               </button>
             </div>
