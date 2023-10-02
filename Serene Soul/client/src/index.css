@@ -48,7 +48,7 @@ header {
 }
 
 nav {
-  display: inline;
+  display: inline; 
   padding: 0.7rem;
   margin: 0.5rem 0.75rem;
   background:var(--chambray);
