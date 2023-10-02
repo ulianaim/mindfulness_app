@@ -4,9 +4,9 @@
   --chambray: #355b7e;
   --easternblue: #2692b9;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 
   color-scheme: light dark;
   color: var(--chambray);
@@ -41,6 +41,9 @@ body {
 header {
   background-image: url("../src/assets/header.jpg");
   background-size: cover;
+  font-family: 'Domine', serif;
+  font-weight: 600;
+  font-size: 1rem;
   text-shadow: 2px 2px 3px rgba(204, 252, 235, 0.5);
 }
 
@@ -93,6 +96,10 @@ main {
   justify-content: center; /* Center children horizontally */
 }
 
+.p-0 {
+  padding: 0;
+}
+
 .m-0 {
   margin: 0;
 }
@@ -122,7 +129,7 @@ main {
 }
 
 .form-input {
-  background-color: rgba(53, 91, 126, 0.5); /* Adjust the color values and opacity (0.7) as needed */
+  background-color: rgba(53, 91, 126, 0.5);
   margin: 0.5rem;
   padding: 0.25rem;
   border-radius: 8px;
@@ -142,6 +149,14 @@ input::placeholder {
 
 footer {
   background-image: radial-gradient(circle, var(--foamlight), var(--chambray));
+  text-shadow: 2px 2px 3px rgba(204, 252, 235, 0.5);
+  font-family: 'Domine', serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+footer button {
+  font-family: 'Manrope', sans-serif;
 }
 
 .card {
@@ -170,17 +185,13 @@ h1 {
 
 .logo {
   height: 6em;
-  padding: 0.5em;
+  padding: 0em;
   will-change: filter;
   transition: filter 300ms;
 }
 
 .logo:hover {
   filter: drop-shadow(0 0 1em var(--easternblue));
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 button {
