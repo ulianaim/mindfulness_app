@@ -52,20 +52,22 @@ const MyQuotes = ({ title }) => {
       </h3>
       {data?.user.quotes?.map((quote) => (
           <div key={quote._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
-              <span style={{ fontSize: '1rem' }}>
-                This Quote was added on {quote.createdAt}
-              </span>
-            </h4>
+           
             <div className="card-body bg-light p-2">
-              <p>{quote.quoteText}</p>
+              <p>"{quote.quoteText}"</p>
             </div>
-            <button onClick={() => handleRemoveQuote(quote._id)}>Delete</button>
+            
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/quotes/${quote._id}`}
             >
             </Link>
+            <h4 className="card-header bg-primary text-light p-2 m-0">
+              <span style={{ fontSize: '1rem' }}>
+                was added on {quote.createdAt}
+              </span>
+            </h4>
+            <button onClick={() => handleRemoveQuote(quote._id)}>Delete</button>
           </div>
         ))}
     </div>
