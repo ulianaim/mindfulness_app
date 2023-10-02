@@ -1,15 +1,21 @@
 import { useQuery, useMutation } from '@apollo/client'; 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { QUERY_MY_QUOTES } from '../../utils/queries';
+import { QUERY_USER } from '../../utils/queries';
 import {REMOVE_QUOTE} from '../../utils/mutations'
 import Auth from '../../utils/auth'
 
 
 const MyQuotes = ({ title }) => {
+  let currentUsername = Auth.getProfile().data.username;
+  console.log(currentUsername)
   const [userData, setUserData] = useState(null);
-  const { loading, error, data } = useQuery(QUERY_MY_QUOTES);
+  const { loading, error, data } = useQuery(QUERY_USER, {
+    variables: {username: currentUsername}
+  });
   const [removeQuote] = useMutation(REMOVE_QUOTE)
+  console.log(data);
+  console.log("test123");
 
   useEffect(() => {
     if (!loading && !error && data && data.getUserData) {
@@ -37,12 +43,12 @@ const MyQuotes = ({ title }) => {
   return (
     <div>
       <h3>{title}
-      {userData?.quotes?.length ? (
-        `Viewing ${userData.quotes.length}'s saved 
-        ${userData.quotes.length === 1 ? 'quote' : 'quotes'}:`
+      {data?.user.quotes?.length ? (
+        `Viewing ${data.user.quotes.length}'s saved 
+        ${data.user.quotes.length === 1 ? 'quote' : 'quotes'}:`
       ) : ( 'You have not added any quotes!')}
       </h3>
-      {userData?.quotes?.map((quote) => (
+      {data?.user.quotes?.map((quote) => (
           <div key={quote._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
               <span style={{ fontSize: '1rem' }}>

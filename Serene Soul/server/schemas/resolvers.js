@@ -19,7 +19,9 @@ const resolvers = {
     },
     myQuote: async (parent, { username }) => {
       console.log(username)
-      return await User.findOne({ username }).populate('quotes');
+      let userData = await User.findOne({ username }).populate('quotes');
+      console.log(userData.quotes);
+      return userData.quotes;
     },
   },
 

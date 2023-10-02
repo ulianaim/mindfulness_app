@@ -27,7 +27,7 @@ const typeDefs = gql`
         quotes: [Quote]!
         quote(quoteId: ID!): Quote   
         user(username: String!): User
-        myQuote(username: String!): User
+        myQuote(username: String!): [Quote]
         }
     
 
