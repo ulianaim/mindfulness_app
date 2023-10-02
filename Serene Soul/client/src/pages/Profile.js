@@ -12,8 +12,8 @@ const Profile = () => {
     return (
         <main>
         
-          <div className="card flex-row justify-center">
-            <div>
+          <div className="flex-row justify-center">
+            <div className="card">
               {loading ? (
                 <div>Loading...</div>
               ) : (
