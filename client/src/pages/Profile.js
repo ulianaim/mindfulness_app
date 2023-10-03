@@ -8,7 +8,7 @@ import MyQuotes from '../components/MyQuotes';
 
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_MY_QUOTES);
-
+  const {username} = useParams();
     return (
         <main>
         
