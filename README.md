@@ -31,15 +31,21 @@ GIVEN a mindfulness application
 WHEN I load the serene soul page
 THEN I am presented with clickable Home, Login, and Signup link options
 WHEN I click on the Signup link option 
-THEN I am presented with several input areas for Your username, Your email and ****** for password to input accordingly
+THEN I am presented with several input areas for username, email and password to input accordingly
 WHEN I click on the Login link option 
-THEN I am presented with several input areas for Your email and ****** for password to input accordingly
-WHEN I am logged in and go to my profile by typing it in the address bar where the localhost:3000 is by adding /profile/:username
-THEN I am presented with Add your favorite quote input box and an add button
-WHEN I add a quote
-THEN it's saves to my profile with my user name, date, time and the created quote
+THEN I am presented with several input areas for email and password to input accordingly
+WHEN I am logged in 
+THEN I am presented my profile and my saved daily quotes
+WHEN I click my profile
+THEN I presented with the option to add a quote, view saved quotes, and delete a quote
+WHEN I add a quote that I like
+THEN I am presented with the saved quotes in my profile saved quotes
+WHEN I click on a delete button
+THEN I am presented with all my saved quotes except the one I deleted 
 WHEN I  click on the Go Back to the Home Page button
 THEN the home page gets presented so the I can view my daily quotes
+WHEN I click logout 
+THEN I am presented with the home page and not my profile page anymore
 ```
 
 
@@ -54,17 +60,14 @@ If you would like to contribute as a developer, you can submit a pull request. B
 
 # Screenshots
 
-<!-- ## Next screenshots will create understanding of the website's functionality.
-# a. Homepage ![HP](<public/images/HomePage (1).png>)
-# b. Login Page![Login](public/images/Screenshots/Login.png)
-# c. Sign Up Page ![Signup](public/images/Screenshots/signup.png)
-# d. Comment Page ![comment](public/images/Screenshots/Comment.png)
-# e. Update Information Page ![update inforamtion](public/images/Screenshots/UpdateInformation.png)
-# f. Create New Post Page ![new post](public/images/Screenshots/CreateNewPost.png) -->
- 
+## Next screenshots will create understanding of the website's functionality.
+# a. Homepage ![HP](`Assets\1signup.png`)
+# b. Login Page![Login](Assets\2login.png)
+# c. Sign Up Page ![Signup](Assets\3profile.png)
+# d. Quote Page ![quotes](Assets\4quotes.png)
+
  
 ## Refferences
-
 
 <a href = https://www.w3schools.com/>W3Schools</a>
 
@@ -115,7 +118,6 @@ For any questions, please contact us:
 2. <a href =mariannabfree@gmail.com>Marianna B</a>
 3. <a href =agracenotary@gmail.com>Amaizing Grace</a>
 4. <a href =lexigeller@yahoo.com>Lexi Geller</a>
-5. <a href = >Isoel Rodriguez
 
 
 ## License
