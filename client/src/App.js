@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -36,7 +37,29 @@ const httpLink = createHttpLink({
   });
   
   function App() {
+    class ErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+      }
+    
+      static getDerivedStateFromError(error) {
+        return { hasError: true };
+      }
+    
+
+    
+      render() {
+        if (this.state.hasError) {
+          return <h1>Something went wrong.</h1>;
+        }
+    
+        return this.props.children;
+      }
+    }
+    
     return (
+      <ErrorBoundary>
       <ApolloProvider client={client}>
         <Router>
           <div>
@@ -67,6 +90,7 @@ const httpLink = createHttpLink({
           </div>
         </Router>
       </ApolloProvider>
+      </ErrorBoundary>
     );
   }
   

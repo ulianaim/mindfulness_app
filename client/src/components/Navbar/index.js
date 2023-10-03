@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 
 function Navbar() {
-  const username = Auth.getProfile().data.username
+  let username
+  if (Auth.loggedIn()){
+
+     username = Auth.getProfile().data.username
+  }
   return (
     <nav className="sticky justify-space-between">
       <Link className="btn btn-lg btn-info m-2" to = "/">Home</Link>
