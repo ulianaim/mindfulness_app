@@ -1,6 +1,16 @@
 # mindfulness_app
 
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
+
+## Table of Contents
+- [Description](#description)
+- [Heroku Deployment](#heroku)
+- [Contributing](#contributing)
+- [Questions](#questions)
+- [License](#license)
+
 
 ## User Story
 
@@ -12,32 +22,99 @@ so that I can keep a list of quotes to read every day
 
 ## Acceptance Criteria
 
-Given a mindfulness application
-When I load the serene soul page
-Then I am presented with a menu with the options search for Quotes and Login/Signup and an input field to search for quotes and a submit button
-When I click on the Search for Quotes menu option
-Then I am presented with an input field to search for Quotes and a submit button
-When I am not logged in and enter a search term in the input field and click the submit button
-Then I am presented with several search results, each featuring a quote’s title, author, description, image, and a link to that quote on the Google Quotes site
-When I click on the Login/Signup menu option
-Then a modal appears on the screen with a toggle between the option to log in or sign up
-When the toggle is set to Signup
-Then I am presented with three inputs for a username, an email address, and a password, and a signup button
-When the toggle is set to Login
-Then I am presented with two inputs for an email address and a password and login button
-When I enter a valid email address and create a password and click on the signup button
-Then my user account is created and I am logged in to the site
-When I enter my account’s email address and password and click on the login button
-Then I the modal closes and I am logged in to the site
-When I am logged in to the site
-Then the menu options change to Search for Quotes, an option to see my saved Quotes, and Logout
-When I am logged in and enter a search term in the input field and click the submit button
-Then I am presented with several search results, each featuring a quote’s title, author, description, image, and a link to that quote on the Google Quotes site and a button to save a quote to my account
-When I click on the Save button on a quote
-Then that quote’s information is saved to my account
-When I click on the option to see my saved Quotes
-Then I am presented with all of the Quotes I have saved to my account, each featuring the quote’s title, author, description, image, and a link to that quote on the Google Quotes site and a button to remove a quote from my account
-When I click on the Remove button on a quote
-Then that quote is deleted from my saved Quotes list
-When I click on the Logout button
-Then I am logged out of the site
+```
+GIVEN a mindfulness application
+WHEN I load the serene soul page
+THEN I am presented with clickable Home, Login, and Signup link options
+WHEN I click on the Signup link option 
+THEN I am presented with several input areas for Your username, Your email and ****** for password to input accordingly
+WHEN I click on the Login link option 
+THEN I am presented with several input areas for Your email and ****** for password to input accordingly
+WHEN I am logged in and go to my profile by typing it in the address bar where the localhost:3000 is by adding /profile/:username
+THEN I am presented with Add your favorite quote input box and an add button
+WHEN I add a quote
+THEN it's saves to my profile with my user name, date, time and the created quote
+WHEN I  click on the Go Back to the Home Page button
+THEN the home page gets presented so the I can view my daily quotes
+```
+
+
+## Heroku Deployment
+
+Deployed App: https://fast-crag-82231-d0ecbeff422b.herokuapp.com/
+
+## Contributing
+
+If you would like to contribute as a developer, you can submit a pull request. Before starting any substantial work, it's recommended to open an issue to discuss your proposed changes with the lead developer.
+
+
+# Screenshots
+
+<!-- ## Next screenshots will create understanding of the website's functionality.
+# a. Homepage ![HP](<public/images/HomePage (1).png>)
+# b. Login Page![Login](public/images/Screenshots/Login.png)
+# c. Sign Up Page ![Signup](public/images/Screenshots/signup.png)
+# d. Comment Page ![comment](public/images/Screenshots/Comment.png)
+# e. Update Information Page ![update inforamtion](public/images/Screenshots/UpdateInformation.png)
+# f. Create New Post Page ![new post](public/images/Screenshots/CreateNewPost.png) -->
+ 
+ 
+## Refferences
+
+
+<a href = https://www.w3schools.com/>W3Schools</a>
+
+
+<a href = https://stackoverflow.com/>Community Forums & Stack Overflow</a>
+
+
+3. <a href =https://expressjs.com/>Express.js</a>
+
+
+4. <a href =https://create-react-app.dev/docs/making-a-progressive-web-app>Making a progressive Web App</a>
+
+
+5. <a href =https://www.apollographql.com/tutorials/fullstack-quickstart/04-writing-query-resolvers/>Apollographql</a>
+
+
+6. <a href =https://www.youtube.com/playlist?list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE/>Learn the MERN Stack YouTube</a>
+
+
+7. <a href =https://www.sitepoint.com/react-router-complete-guide/>React router complete guide</a>
+
+
+8. <a href =https://dev.to/>DEV Community</a>
+
+
+9. <a href =https://calendly.com/d/dnc-wpf-c7s>UCF Tutors</a>
+
+
+10. <a href =https://developer.mozilla.org/en-US/docs/Glossary/MVC>MDN Web Docs</a>
+
+
+11. <a href =https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas>Deploying</a>
+
+
+
+
+## Questions
+
+
+For any questions, please contact us:
+
+
+- GitHub: [uliamaim](https://github.com/ulianaim/mindfulness_app)
+
+
+- Collaborators Emails:
+1. <a href =uliana_usa@yahoo.com>Uliana Imangulova</a>
+2. <a href =mariannabfree@gmail.com>Marianna B</a>
+3. <a href =agracenotary@gmail.com>Amaizing Grace</a>
+4. <a href =lexigeller@yahoo.com>Lexi Geller</a>
+5. <a href = >Isoel Rodriguez
+
+
+## License
+
+
+This project is licensed under the MIT License.
