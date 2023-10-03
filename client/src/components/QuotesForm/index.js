@@ -28,7 +28,7 @@ const QuoteForm = () => {
     } catch (err) {
       console.error(err);
     }
-    window.location.reload()
+    window.location.reload(false)
   };
 
   const handleChange = (event) => {
