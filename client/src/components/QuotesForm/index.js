@@ -24,11 +24,10 @@ const QuoteForm = () => {
           quoteAuthor: Auth.getProfile().data.username,
         },
       });
-
+      window.location.reload()
     } catch (err) {
       console.error(err);
     }
-    window.location.reload(false)
   };
 
   const handleChange = (event) => {
