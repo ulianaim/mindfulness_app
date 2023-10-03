@@ -34,7 +34,7 @@ const MyQuotes = ({ title }) => {
     } catch (err) {
       console.error(err);
     }
-    window.location.reload()
+    window.location.reload(false)
 
   };
 
