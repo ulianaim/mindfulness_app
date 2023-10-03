@@ -8,6 +8,7 @@
 - [Description](#description)
 - [Heroku Deployment](#heroku)
 - [Contributing](#contributing)
+- [References](#references)
 - [Questions](#questions)
 - [License](#license)
 
@@ -61,18 +62,18 @@ If you would like to contribute as a developer, you can submit a pull request. B
 # Screenshots
 
 ## Next screenshots will create understanding of the website's functionality.
-# a. Homepage ![HP](`Assets\1signup.png`)
-# b. Login Page![Login](Assets\2login.png)
-# c. Sign Up Page ![Signup](Assets\3profile.png)
-# d. Quote Page ![quotes](Assets\4quotes.png)
+![HP](Assets\1signup.png)
+![Login](Assets\2login.png)
+![Signup](Assets\3profile.png)
+![quotes](Assets\4quotes.png)
 
  
-## Refferences
+## References
 
-<a href = https://www.w3schools.com/>W3Schools</a>
+1. <a href = https://www.w3schools.com/>W3Schools</a>
 
 
-<a href = https://stackoverflow.com/>Community Forums & Stack Overflow</a>
+2. <a href = https://stackoverflow.com/>Community Forums & Stack Overflow</a>
 
 
 3. <a href =https://expressjs.com/>Express.js</a>
@@ -110,15 +111,14 @@ If you would like to contribute as a developer, you can submit a pull request. B
 For any questions, please contact us:
 
 
-- GitHub: [uliamaim](https://github.com/ulianaim/mindfulness_app)
+GitHub: [uliamaim](https://github.com/ulianaim/mindfulness_app)
 
 
-- Collaborators Emails:
-1. <a href =uliana_usa@yahoo.com>Uliana Imangulova</a>
-2. <a href =mariannabfree@gmail.com>Marianna B</a>
-3. <a href =agracenotary@gmail.com>Amaizing Grace</a>
-4. <a href =lexigeller@yahoo.com>Lexi Geller</a>
-
+Collaborators Emails:
+1. [Uliana Imangulova](https://github.com/ulianaim)
+2. [Marianna Bruns](https://github.com/marbfree)
+3. [Amazing Grace]()
+4. [Lexi Geller]()
 
 ## License
 
