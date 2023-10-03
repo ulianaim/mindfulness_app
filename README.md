@@ -14,11 +14,15 @@
 
 ## User Story
 
+```
 As an avid serene soul mind
 I WANT to bring peace and calm into my life
 SO THAT i can have daily reminders to motivate me
 I want to search for new quotes; as well as create new ones
 so that I can keep a list of quotes to read every day
+
+```
+
 
 ## Acceptance Criteria
 
