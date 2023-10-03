@@ -81,7 +81,7 @@ If you would like to contribute as a developer, you can submit a pull request. B
 5. <a href =https://www.apollographql.com/tutorials/fullstack-quickstart/04-writing-query-resolvers/>Apollographql</a>
 
 
-6. <a href =https://www.youtube.com/playlist?list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE/>Learn the MERN Stack YouTube</a>
+6. [Learn the MERN Stack YouTube](https://www.youtube.com/playlist?list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE)
 
 
 7. <a href =https://www.sitepoint.com/react-router-complete-guide/>React router complete guide</a>
