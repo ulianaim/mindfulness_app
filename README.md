@@ -62,10 +62,10 @@ If you would like to contribute as a developer, you can submit a pull request. B
 # Screenshots
 
 ## Next screenshots will create understanding of the website's functionality.
-![HP](Assets\1signup.png)
-![Login](Assets\2login.png)
-![Signup](Assets\3profile.png)
-![quotes](Assets\4quotes.png)
+![HP](client/src/assets/1signup.png)
+![Login](client/src/assets/2login.png)
+![Signup](client/src/assets/3profile.png)
+![quotes](client/src/assets/4quotes.png)
 
  
 ## References
