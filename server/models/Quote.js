@@ -11,7 +11,7 @@ const quoteSchema = new Schema({
   },
   quoteAuthor: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
   createdAt: {
