@@ -68,10 +68,10 @@ const resolvers = {
     removeQuote: async (parent, { quoteId }) => {
       return Quote.findOneAndDelete({ _id: quoteId });
     },
-    updateQuote: async (parent, { quoteText, quoteAuthor }) => {
-       const quote = await Quote.findOneAndUpdate({ quoteText, quoteAuthor });
+    updateQuote: async (parent, { quoteId, quoteText, quoteAuthor }) => {
+       const quote = await Quote.findOneAndUpdate({ quoteId, quoteText});
         await Quote. findOneAndUpdate(
-            { username: quoteText, quoteAuthor},
+            {username: quoteAuthor},
             {$addToSet: { quotes: quote._id}}
         )
       return quote;

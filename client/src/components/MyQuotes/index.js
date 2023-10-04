@@ -2,7 +2,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { QUERY_USER } from '../../utils/queries';
-import {REMOVE_QUOTE} from '../../utils/mutations'
+import { REMOVE_QUOTE, UPDATE_QUOTE } from '../../utils/mutations'
 import Auth from '../../utils/auth'
 
 
@@ -13,6 +13,11 @@ const MyQuotes = ({ title }) => {
   const { loading, error, data } = useQuery(QUERY_USER, {
     variables: {username: currentUsername}
   });
+  const [updateQuote] = useMutation(UPDATE_QUOTE)
+  const  [editMode, setEditMode]  = useState (false)
+  const [editId,setEditId] = useState()
+  const [quoteText, setQuoteText] = useState()
+  
   const [removeQuote] = useMutation(REMOVE_QUOTE)
   console.log(userData);
 
@@ -21,6 +26,32 @@ const MyQuotes = ({ title }) => {
       setUserData(data.getUserData);
     }
   }, [loading, error, data]);
+
+  const handleUpdateQuote = async (quoteId, quoteText) => {
+    try {
+    const token = Auth.getToken();
+    if (!token) {
+      console.log(token)
+      return;
+    }
+
+      await updateQuote({ variables: { quoteId: quoteId, quoteText: quoteText, quoteAuthor: Auth.getProfile().data.username}});
+      setEditMode(false);
+      setQuoteText('');
+    } catch (err) {
+      console.error(err);
+    }
+    window.location.reload(false)
+
+
+  };
+
+  const handleEditForm = async (quoteId, quoteText) => {
+    setEditMode(true)
+    setEditId(quoteId)
+    setQuoteText(quoteText)
+  }
+
 
   const handleRemoveQuote = async (quoteId) => {
     try {
@@ -42,6 +73,14 @@ const MyQuotes = ({ title }) => {
     return <h2>LOADING...</h2>;
   }
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'Quote') {
+      setQuoteText(value);
+    }
+  };
+
   return (
     <div>
       <h3>{title}
@@ -52,11 +91,22 @@ const MyQuotes = ({ title }) => {
       </h3>
       {data?.user.quotes?.map((quote) => (
           <div key={quote._id} className="card mb-3">
+           { editMode && quote._id === editId ? 
+           <>
+           <textarea className="form-input"
+           name="Quote"
+           placeholder={quote.quoteText}
+           value={quoteText}
+           style={{ lineHeight: '1.5', resize: 'vertical' }}
+           onChange={handleChange}
+         ></textarea>
+         <button onClick={() => handleUpdateQuote(quote._id, quoteText)}>Save</button> 
+         </>
+         :  <div className="card-body bg-light p-2">
+         <p>"{quote.quoteText}"</p>
+       </div>
+           }
            
-            <div className="card-body bg-light p-2">
-              <p>"{quote.quoteText}"</p>
-            </div>
-            
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/quotes/${quote._id}`}
@@ -67,6 +117,7 @@ const MyQuotes = ({ title }) => {
                 was added on {quote.createdAt}
               </span>
             </h4>
+            <button onClick={() => handleEditForm(quote._id, quote.quoteText)}>Edit</button>
             <button onClick={() => handleRemoveQuote(quote._id)}>Delete</button>
           </div>
         ))}

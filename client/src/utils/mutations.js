@@ -33,19 +33,14 @@ export const ADD_QUOTE = gql`
   }`
 
 export const UPDATE_QUOTE = gql`
-mutation updateQuote($quoteId: String!, $quoteText: String!, $quoteAuthor: String!){
-    updateQuote(quoteId: $quoteId, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
-        _id
-        username
-        email
-        password
-        addedQuotes {
-            quoteText
-            quoteAuthor
-            createdAt
-        }
-    }
-  }`
+mutation UpdateQuote($quoteId: String!, $quoteText: String!, $quoteAuthor: String!) {
+  updateQuote(quoteId: $quoteId, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
+    _id
+    quoteText
+    quoteAuthor
+    createdAt
+  }
+}`
   
 
 export const REMOVE_QUOTE = gql`
