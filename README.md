@@ -117,8 +117,8 @@ GitHub: [uliamaim](https://github.com/ulianaim/mindfulness_app)
 Collaborators Emails:
 1. [Uliana Imangulova](https://github.com/ulianaim)
 2. [Marianna Bruns](https://github.com/marbfree)
-3. [Amazing Grace]()
-4. [Lexi Geller]()
+3. [Amazing Grace](https://github.com/iis4u2nv)
+4. [Lexi Geller](https://github.com/lexigeller)
 
 ## License
 
