@@ -9,7 +9,6 @@ import Auth from '../../utils/auth'
 const MyQuotes = ({ title }) => {
   let currentUsername = Auth.getProfile().data.username;
   console.log(currentUsername)
-  const [userData, setUserData] = useState(null);
   const { loading, error, data } = useQuery(QUERY_USER, {
     variables: {username: currentUsername}
   });
@@ -19,13 +18,7 @@ const MyQuotes = ({ title }) => {
   const [quoteText, setQuoteText] = useState()
   
   const [removeQuote] = useMutation(REMOVE_QUOTE)
-  console.log(userData);
 
-  useEffect(() => {
-    if (!loading && !error && data && data.getUserData) {
-      setUserData(data.getUserData);
-    }
-  }, [loading, error, data]);
 
   const handleUpdateQuote = async (quoteId, quoteText) => {
     try {
@@ -50,6 +43,7 @@ const MyQuotes = ({ title }) => {
     setEditMode(true)
     setEditId(quoteId)
     setQuoteText(quoteText)
+    console.log(quoteId, quoteText)
   }
 
 
